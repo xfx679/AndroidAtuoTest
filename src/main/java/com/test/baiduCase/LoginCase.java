@@ -20,6 +20,7 @@ public class LoginCase {
 		Base base = new Base();
 		AndroidDriver driver = base.openBrowser();
 		System.out.println("开始");
+		base.sleep(2000);
 		//点击新版本弹关闭按钮
 		driver.findElement(By.id("com.uxin.usedcar:id/dialog_cancelId")).click();
 		System.out.println("------点击关闭按钮成功");
@@ -32,15 +33,17 @@ public class LoginCase {
 		//屏幕截图
 //		base.CaptureScreenShot("appView");
 		//滑动页面
-		base.slideUp();
-		base.sleep(2000);
-		System.out.println("------滑动页面成功");
-		//列表页点击车辆
-//		List elements = driver.findElements(By.id("com.uxin.usedcar:id/vn"));
-//		System.out.println(elements.size());
-//		WebElement element = (WebElement) elements.get(3);
-//		element.click();
+//		base.slideUp();
 //		base.sleep(2000);
+//		System.out.println("------滑动页面成功");
+		//列表页点击车辆
+		List elements = driver.findElements(By.className("android.widget.TextView"));
+		System.out.println(elements.size());
+//		WebElement element = (WebElement) elements.get(1);
+//		element.click();
+//		driver.findElement(By.id("com.uxin.usedcar:id/bww")).click();//进入买家秀页面
+		base.sleep(2000);
 		System.out.println("结束");
+		driver.close();
 	}
 }
